@@ -52,20 +52,43 @@ print()
 # Creating array to store all the generated characters inside.
 pass_char_arr = []
 
+
+def append_to_arr(char_count, method_from_pass_gen):
+    for char in char_count:
+        pass_char_arr.append(method_from_pass_gen)
+
+
 # Generating however many alpha characters the user specified
-for chars in upper_alpha_chars:
-    pass_char_arr.append(password_gen.random_capitalized_alpha_char())
+# for chars in upper_alpha_chars:
+#     pass_char_arr.append(password_gen.random_capitalized_alpha_char())
+
+append_to_arr(upper_alpha_chars, password_gen.random_capitalized_alpha_char())
 
 # Generating however many numeric characters the user specified
-for chars in numeric_char_count:
-    pass_char_arr.append(password_gen.random_numeric_char(0, 9))
+# for chars in numeric_char_count:
+#     pass_char_arr.append(password_gen.random_numeric_char(0, 9))
+
+append_to_arr(numeric_char_count, password_gen.random_numeric_char(0, 9))
+
 
 # Generating however many special characters the user specified
-for chars in special_char_count:
-    pass_char_arr.append(password_gen.random_special_char())
+# for chars in special_char_count:
+#     pass_char_arr.append(password_gen.random_special_char())
+
+append_to_arr(special_char_count, password_gen.random_special_char())
+
 
 # Calculating how many characters are left to fulfill the password length requirements.
-leftoverChars = (total_char_count - len(pass_char_arr))
+leftover_chars = (total_char_count - len(pass_char_arr))
+
+# Getting a random number so to make the password not NECESSARILY the required length.
+total_char_count = password_gen.random_numeric_char(0, 5)
+leftover_chars += total_char_count
+
+
+# Generating lowercase alphas depending on how many leftover characters there are.
+append_to_arr(leftover_chars, password_gen.random_lower_alpha_char())
+
 
 
 print("loading... please wait for your new password to be generated!")
@@ -74,6 +97,9 @@ print()
 print("your new password is...")
 print()
 print()
+
+
+
 
 
 
