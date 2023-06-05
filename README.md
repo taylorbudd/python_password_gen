@@ -1,2 +1,2 @@
-# python_passwordGen
-Python application that will generate a password.
+# python_password_gen
+Python console application that will generate a password.
