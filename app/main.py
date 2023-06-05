@@ -24,6 +24,8 @@ ______                                   _   _____                           _
 
 ''')
 
+# TODO : ADD VALIDATION
+
 # Getting the total amount of characters required to fulfill password requirements
 total_char_count = int(input("How many characters are required for your password?"))
 print(f"{total_char_count} characters! Let's see what I can do for you!")
